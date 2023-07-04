@@ -41,7 +41,7 @@ These commands will download and install the HTTParty and OpenSSL gems.
 Run the Script: Once the libraries are installed, you can run the script by executing the following command in the terminal:
 
 ```
-ruby CVE-2023-24488.rb
+ruby xss-scanner.rb
 ```
 
 The script will start running and perform the XSS vulnerability scanning based on the provided URLs and payloads. The output will be displayed in the terminal.
