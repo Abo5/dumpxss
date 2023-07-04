@@ -1,0 +1,2 @@
+http://testphp.vulnweb.com/hpp/?pp=aa
+https://www.taza.com.sa/cdn/shop/t/7/assets/map-1641369434985.png?v=
