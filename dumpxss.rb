@@ -41,7 +41,7 @@ def send(url, payload)
         File.open(payload, "r") do |payload|
           payload.each_line do |line2|
             modified_url = line.gsub(/=.*/, "=#{line2}")
-            response = HTTParty.get(modified_url, verify: OpenSSL::SSL::VERIFY_NONE)  #عشان يدعم https اضفنا بس (verify: false) opensslاو نضيف ونضيف مكتبة (verify: OpenSSL::SSL::VERIFY_NONE)
+            response = HTTParty.get(modified_url, verify: OpenSSL::SSL::VERIFY_NONE)  
             if response.body.include?(line2) || response.code == 200
               puts "\n\n"
               puts "\n\nXSS Found   -->     \e[38;2;144;238;144m#{modified_url}\e[0m  -  \e[32m#{response.code}\e[0m\n".gsub(/\s+/, " ")
