@@ -3,27 +3,18 @@ The script you provided is a Ruby script used for testing Cross-Site Scripting (
 
 # Features:
 
-1- he script utilizes the HTTParty library for making HTTP requests.
+1- Input URLs: The script takes a list of target URLs to scan for Cross-Site Scripting (XSS) vulnerabilities.
 
-2- It clears the console screen using the system("clear") command.
+2- Payloads: It uses a list of XSS payloads that are tested against the URLs to identify potential vulnerabilities.
 
-3- It displays a logo using ASCII art.
+3- HTTP Requests: The script sends GET requests to the target URLs, modifying them with different payloads to check for XSS vulnerabilities.
 
-4- It defines a function print_Running... that displays a running animation.
+4- Response Analysis: It examines the response from the target URLs and checks if the response body contains the injected payload or if the response code is 200 (OK).
 
-5- The script reads URLs, payloads, and proxy lists from separate text files: url.txt, payloads.txt, and proxy.txt.
+5- Vulnerability Detection: If a potential XSS payload is found or if the response code is 200, the script identifies the URL as vulnerable and displays a corresponding message.
 
-6- It defines a send function that sends requests to the URLs with modified payloads.
+6- Output: The script writes the identified vulnerable URLs to an output file.
 
-7- For each URL in the url.txt file, it iterates through each payload in the payloads.txt file.
-
-8- It modifies the URL by replacing a query parameter's value with the current payload.
-
-9- It sends a GET request to the modified URL using HTTParty, ignoring SSL verification (verify: OpenSSL::SSL::VERIFY_NONE).
-
-10- If the response body includes the payload or the response code is 200, it prints an XSS vulnerability message and writes the URL to output.txt.
-
-11- If the payload is not found in the response body, it prints a message indicating that XSS was not found.
 
 
 
